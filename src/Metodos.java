@@ -195,12 +195,21 @@ public class Metodos {
         }
     }
 
-    public static int sumaCodigos(String str, int indice, int longitudCadena) {
-        if (indice==longitudCadena){
-            return str.charAt(indice);
+    public static int sumaCodigos(String str) {
+        if (str.length()==0){
+            return 0;
         }
         else {
-            return sumaCodigos(str, indice,longitudCadena)+str.charAt(indice);
+            return sumaCodigosAux(str, 0, 0);
+        }
+    }
+
+    public static int sumaCodigosAux (String str, int indice, int resultado){
+        if (indice==str.length()){
+            return resultado;
+        }
+        else {
+            return sumaCodigosAux(str, resultado + str.charAt(indice), indice+1);
         }
     }
 

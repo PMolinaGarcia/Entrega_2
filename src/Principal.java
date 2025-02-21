@@ -73,8 +73,8 @@ public class Principal {
         String n = "n";
         String g = "g";
         int longitudCadena = cadena.length();
-        System.out.println("\n\nLa suma de los códigos de los caracteres de la palabra " + cadena + " es " + Metodos.sumaCodigos(cadena, 0, longitudCadena));
-        System.out.println("\n\nLa suma de los códigos de los caracteres de la palabra " + S + " es " + Metodos.sumaCodigos(S, 0, longitudCadena));
+        System.out.println("\n\nLa suma de los códigos de los caracteres de la palabra " + cadena + " es " + Metodos.sumaCodigos(cadena));
+        System.out.println("\n\nLa suma de los códigos de los caracteres de la palabra " + S + " es " + Metodos.sumaCodigos(S));
     }
 
 }
