@@ -181,19 +181,51 @@ public class Metodos {
         }
     }
 
-    public static double integral (DoubleUnaryOperator funcion, double limInf, double limSup, int n){
-        double h = (limSup-limInf)/n;
-        return integralEXCuadrado(funcion, limInf,  limSup,  h);
+
+
+
+
+
+
+
+
+
+
+
+
+    public static double integral (DoubleUnaryOperator funcion, double limInf, double limSup, int numeroIntervalos){
+        double pasoIntegral = (limSup-limInf)/numeroIntervalos;
+        return integralCualquieraIterativa(funcion, limInf,  limSup,  pasoIntegral);
     }
 
-    public static double integralEXCuadrado (DoubleUnaryOperator funcion, double limInf, double limSup, double h){
+    public static double integralCualquieraRecursiva (DoubleUnaryOperator funcion, double limInf, double limSup, double h){
         if (Math.abs(limSup-limInf)<0.0001) {
             return 0;
         }
         else {
-            return integralEXCuadrado(funcion, limInf+h,limSup,h)+funcion.applyAsDouble(limInf)*h;
+            return integralCualquieraRecursiva(funcion, limInf+h,limSup,h)+funcion.applyAsDouble(limInf)*h;
         }
     }
+
+    public static double integralCualquieraIterativa (DoubleUnaryOperator f, double limInf, double limSup, double h){
+        double areaRectangulos = 0;
+        for (double x = limInf; Math.abs(x-limSup)<0.001; x+=h){
+            areaRectangulos+=h*f.applyAsDouble(x);
+        }
+        return areaRectangulos;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     public static int sumaCodigos (String str, int indice, int resultado){

@@ -62,8 +62,8 @@ public class Principal {
 
         double limInf = 0;
         double limSup = 1;
-        int pasoIntegral = 20;
-        System.out.println("\n\nLa integral definida entre " + limInf + " y " + limSup + ", con un paso de " + pasoIntegral + " de e elevado a x al cuadrado es " + Metodos.integral(x->Math.exp(Math.pow(x,2)),limInf, limSup, pasoIntegral));
+        int numeroIntervalos = 20;
+        System.out.println("\n\nLa integral definida entre " + limInf + " y " + limSup + ", con un paso de " + numeroIntervalos + " de e elevado a x al cuadrado es " + Metodos.integral(x->Math.pow(x,3)+Math.pow(x,2)+Math.sin(3*x),limInf, limSup, numeroIntervalos));
 
         String cadena = "String";
         String S = "S";
